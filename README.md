@@ -8,7 +8,7 @@ application where you press a button and add the length and what type of charact
 
 Use if you want to create a highly secure password with your own specifications.
 
-! [screenshot of deployed web page] (./screenshot.png)
+! [screenshot of deployed web page] (screenshot.png)
 
 
 
