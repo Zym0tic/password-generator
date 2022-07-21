@@ -2,7 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
-  var password = "password";
+  var password = "";
   var passLength = 0;
   var useUpper = true;
   var useLower = true;
@@ -67,7 +67,6 @@ function generatePassword() {
   var numChars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   var specChars = ["!", "#", "$", "%", "&", "*", "'"];
   var choices = [];
-  var randomCharacters = [];
 
   // TODO: add code to generate the password here
 
@@ -85,28 +84,25 @@ function generatePassword() {
   );
   useNumber = confirm("Would you like your password to contain numbers?");
 
-  if (useUpper === true) {
+  if (useUpper) {
     choices = choices.concat(upperChars);
   }
 
-  if (useLower === true) {
-    choices= choices.concat(lowerChars);
+  if (useLower) {
+    choices = choices.concat(lowerChars);
   }
 
-  if (useNumber === true) {
+  if (useNumber) {
     choices = choices.concat(numChars);
   }
 
-  if (useSpecial === true) {
+  if (useSpecial) {
     choices = choices.concat(specChars);
   }
 
-  for (var i=0; i < passLength; i++) {
-  var randomChar = choices[Math.floor(Math.random() * choices.length)];
-  randomCharacters.splice(password.length, 0, randomChar);
-  password = randomCharacters.join('');
-  }
-  console.log(randomCharacters);
+  for (var i = 0; i < passLength; i++) {
+      password += choices[Math.floor(Math.random() * choices.length)];
+  };
 
   return password;
 }
