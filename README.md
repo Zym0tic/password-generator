@@ -8,6 +8,8 @@ application where you press a button and add the length and what type of charact
 
 Use if you want to create a highly secure password with your own specifications.
 
+https://zym0tic.github.io/password-generator/
+
 ![screenshot of deployed web page](assets/images/screenshot.png)
 
 
