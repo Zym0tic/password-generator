@@ -17,26 +17,27 @@ function generatePassword() {
   var choices = [];
   
   // TODO: add code to generate the password here
+  
   passLength = prompt('how many characters would you like your password to be? Can be 8-128 chars');
   useUpper = confirm('Would you like your password to contain uppercase letters?');
   useLower = confirm('Would you like your password to contain lowercase letters?');
   useSpecial = confirm('Would you like your password to contain special characters?');
   useNumber = confirm('Would you like your password to contain numbers?');
 
-  choices = [passLength, useUpper, useLower, useSpecial, useNumber];
 
-  if ((useUpper === true) && (useLower === true) && (useSpecial === true) && (useNumber === true)) {
-    lowerChars.push(choices);
-    upperChars.push(choices);
-    numChars.push(choices);
-    specChars.push(choices);
-  }
+var confirmation = [useLower, useUpper, useSpecial, useNumber]
+
+for (let i = 0; i < confirmation.length; i++)
+  if (confirmation[i] === true){
+    choices = [...confirmation[i]];
+  }else{
+    console.log("no");
+  };
 
   console.log(choices);
-  
 
   return password;
-}
+};
 
 // Write password to the #password input
 function writePassword() {
@@ -48,3 +49,5 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+
+//comment
