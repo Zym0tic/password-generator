@@ -67,6 +67,7 @@ function generatePassword() {
   var numChars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   var specChars = ["!", "#", "$", "%", "&", "*", "'"];
   var choices = [];
+  var randomCharacters = [];
 
   // TODO: add code to generate the password here
 
@@ -100,6 +101,12 @@ function generatePassword() {
     choices = choices.concat(specChars);
   }
 
+  for (var i=0; i < passLength; i++) {
+  var randomChar = choices[Math.floor(Math.random() * choices.length)];
+  randomCharacters.splice(password.length, 0, randomChar);
+  password = randomCharacters.join('');
+  }
+  console.log(randomCharacters);
 
   return password;
 }
@@ -114,5 +121,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-//comment
