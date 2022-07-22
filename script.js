@@ -104,6 +104,11 @@ function generatePassword() {
       password += choices[Math.floor(Math.random() * choices.length)];
   };
 
+
+  if (useUpper === false && useLower === false && useNumber ===false && useSpecial=== false){
+    password = "please chose atleast 1 character type";
+  }
+
   return password;
 }
 
