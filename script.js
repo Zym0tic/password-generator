@@ -84,6 +84,12 @@ function generatePassword() {
   );
   useNumber = confirm("Would you like your password to contain numbers?");
 
+  if ((passLength < 8) || (passLength > 128)) {
+    alert('You must chose between 8 and 128 chars.');
+    return "";
+    // generatePassword();
+  }
+
   if (useUpper) {
     choices = choices.concat(upperChars);
   }
@@ -101,12 +107,18 @@ function generatePassword() {
   }
 
   for (var i = 0; i < passLength; i++) {
-      password += choices[Math.floor(Math.random() * choices.length)];
-  };
+    password += choices[Math.floor(Math.random() * choices.length)];
+  }
 
-
-  if (useUpper === false && useLower === false && useNumber ===false && useSpecial=== false){
-    password = "please chose atleast 1 character type";
+  if (
+    useUpper === false &&
+    useLower === false &&
+    useNumber === false &&
+    useSpecial === false
+  ) {
+    alert("please chose atleast 1 character type");
+    return "";
+    // generatePassword();
   }
 
   return password;
